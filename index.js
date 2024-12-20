@@ -18,7 +18,10 @@ app.post('/index', (req, resp) => {
     axios.get(`https://www.kabum.com.br/produto/${CodigoInputValue}/`)
     headers: {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.3',
-        // Adicione outros cabeçalhos se necessário, como tokens de autenticação
+        'Referer': 'https://www.kabum.com.br/', // Adicionando o Referer, se necessário
+        'Accept-Language': 'en-US,en;q=0.9,pt-BR;q=0.8', // Linguagem aceita
+        'Connection': 'keep-alive', // Mantendo a conexão
+        // Adicione outros cabeçalhos caso necessário, como Authorization, cookies, etc.
     }
         .then((resposta) => {
 
